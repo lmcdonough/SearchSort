@@ -1,6 +1,6 @@
 
 class Search(object):
-
+    '''This class contains methods that search a list.'''
     def init(self, ls):
         self.ls = ls
        
@@ -12,7 +12,8 @@ class Search(object):
             return -1
 
     def binary(self, value):
-        '''returns index of the found value or -1 if not found.'''
+        '''returns index of the found value or -1 if not found.
+        Assumes the list is homogeneously composed of numbers.'''
         startIdx = 0
         endIdx = len(self.ls) - 1
         while startIdx <= endIdx:
@@ -28,7 +29,8 @@ class Search(object):
 
 
 class Sort(object):
-    '''Currently, this class assumes the list contains only numbers.'''
+    '''This class containes methods that sort a list.
+    Currently, this class assumes the list contains only numbers.'''
 
     def init(self, ls):
         self.ls = ls
