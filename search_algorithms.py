@@ -28,13 +28,13 @@ class Search(object):
 
 
 class Sort(object):
+    '''Currently, this class assumes the list contains only numbers.'''
 
     def init(self, ls):
         self.ls = ls
 
     def bubble(self):
-        '''sorts a list using the bubble sort algorithm. Assuming the list
-        contains numbers.'''
+        '''sorts a list using the bubble sort algorithm.'''
         for turn in range(len(self.ls) - 1):
             for i in range(len(self.ls) - 1 - turn):
                 a = self.ls[i]
@@ -45,6 +45,7 @@ class Sort(object):
                     self.ls[i] = b
 
     def insertion(self):
+        '''sorts the list usging the insertion sort algorithm'''
         for idx in range(1, len(self.ls)):
             for insertionIdx in range(idx, 0, -1):
                 a = self.ls[insertionIdx - 1]
@@ -55,6 +56,7 @@ class Sort(object):
                 self.ls[insertionIdx - 1] = b
                   
     def selection(self):
+        '''sorts the list using the select sorth algorithm'''
         for targetIdx in range(len(self.ls) - 1):
             #find the index of the minimum value in the unsorted portion
             minIdx = targetIdx
@@ -90,8 +92,8 @@ class Sort(object):
             return self.ls
         else:
             midIdx = int(len(self.ls) / 2)
-            left = mergeSort(self.ls[:midIdx])
-            right = mergeSort(self.ls[midIdx:])
+            left = mergesort(self.ls[:midIdx])
+            right = mergesort(self.ls[midIdx:])
             return merge(left, right)
                 
                        
